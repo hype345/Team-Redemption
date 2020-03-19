@@ -20,7 +20,7 @@ MongoClient.connect("mongodb+srv://Chase:123@cluster0-o2g0q.mongodb.net/test?ret
   if (err) return console.log(err)
   db = client.db('Cluster0') // whatever your database name is
   
-  app.listen(3000, () => {
+  app.listen(process.env.PORT || 3000, () => {
     console.log('listening on 3000')
   })
 
