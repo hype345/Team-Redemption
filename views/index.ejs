@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+Admin Page 
+
+  <ul class="kids">
+  <% for(var i=0; i<database.length; i++) {%>
+    <li class="kid">
+      <span><%= database[i].name %></span>
+      <span><%= database[i].age %></span>
+      <span><%= database[i].quote %></span>
+      <span> <img src = <%= database[i].base64 %> width="200" height="200"/> </span>
+    </li>
+  <% } %>
+  </ul>
+
+
+  <input type="file" id="fileLink" onchange="encodeImageFileAsURL(this)" name="fileLink">
+
+  <form action="/kids" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <input type="text" placeholder="age" name="age">
+    <input type="text" id="base64" placeholder="input file to other form" name="base64">
+    <button type="submit">Submit</button>
+  </form>
+
+  <div>
+    <h2>update any element</h2>
+
+    <form onsubmit="return false;">
+      <input type="text"  placeholder="Enter a name to update" id="nameToUpdate" name="name">
+      <input type="submit" onclick="setNameToUpdate();" >
+    </form>
+
+    <input type="file" id="updateFileLink" onchange="updateEncodeImageFileAsURL(this)" name="fileLink">
+
+    <form onsubmit="return false;">
+      <input type="text" id="updateName" placeholder="name" name="name">
+      <input type="text" id="updateQuote" placeholder="quote" name="quote">
+      <input type="text" id="updateAge" placeholder="age" name="age">
+      <input type="text" id="updateBase64" placeholder="input file to other form" name="base64">
+      <input type="submit" onclick="saveToUpdate();" >
+    </form>
+
+    <button id="update"> update </button>
+  </div>
+
+  <div>
+    <h2>remove a kid</h2>
+    <form onsubmit="return false;">
+      <input type="text"  placeholder="Enter a name to delete" id="nameToDelete" name="name">
+      <input type="submit" onclick="saveToDelete();" >
+    </form>
+    <button id="delete"> Delete </button>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
