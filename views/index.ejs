@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>MY APP</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-Admin Page 
+<h1>Admin Page</h1>
 
-  <ul class="kids">
-  <% for(var i=0; i<database.length; i++) {%>
-    <li class="kid">
-      <span><%= database[i].name %></span>
-      <span><%= database[i].age %></span>
-      <span><%= database[i].quote %></span>
-      <span> <img src = <%= database[i].base64 %> width="200" height="200"/> </span>
-    </li>
-  <% } %>
-  </ul>
+<div>
+
+  <table class = "kids">
+    <% for(var i=0; i<database.length; i++) {%>
+    <tr class = "kid">
+      <td><%= database[i].name %>,  <%= database[i].age %></td>
+      <td rowspan="2"><%= database[i].quote %></td>
+    </tr>
+    <tr class = "kid">
+      <td><img src = <%= database[i].base64 %> width="50" height="50"/></td>
+    </tr>
+    <% } %>
+  </table>
+  
 
 
+</div>
+
+<div>
+  <h2>add a kid</h2>
   <input type="file" id="fileLink" onchange="encodeImageFileAsURL(this)" name="fileLink">
 
   <form action="/kids" method="POST">
@@ -28,6 +37,8 @@ Admin Page
     <input type="text" id="base64" placeholder="input file to other form" name="base64">
     <button type="submit">Submit</button>
   </form>
+</div>
+
 
   <div>
     <h2>update any element</h2>
