@@ -5,3 +5,15 @@ table, td {
 table {
     width:100%
 }
+td {
+    padding: 15px;
+    text-align: left;
+  }
+
+  table tr:nth-child(4n-1) {
+    background-color: #eee;
+  }
+  table tr:nth-child(4n) {
+    background-color: #eee;
+  }
+
