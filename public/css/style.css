@@ -1,21 +1,40 @@
-table, td {
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width:84%;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+
+td.optionA {
+    padding: 15px;
+    text-align: left;
+    border-collapse: collapse;
+    color: rgb(85, 85, 88);
+    font-family: "Palatino Linotype";
+    text-align: center;
+
+  }  
+  td.optionB {
+    padding: 15px;
+    border-collapse: collapse;
+    color: rgb(85, 85, 88);
+    font-family: "Palatino Linotype";
+    text-align: left;
+
+  }  
+  table tr:nth-child(2n) {
+    background-color: #eee;
     border: 1px solid black;
     border-collapse: collapse;
   }
-table {
-    width:100%
-}
-td {
-    padding: 15px;
-    text-align: left;
-  }
 
-  table tr:nth-child(4n-1) {
-    background-color: #eee;
-  }
-  table tr:nth-child(4n) {
-    background-color: #eee;
-  }
+
+
+
+
+
+
   *{
     box-sizing: border-box;
   }
@@ -23,6 +42,10 @@ td {
     margin:0;
   }
   
+  .special{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
   
   .header{
     height:70px;

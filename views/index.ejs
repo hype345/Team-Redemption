@@ -5,25 +5,34 @@
   <title>Team Redemption</title>
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-<h1>Admin Page</h1>
+<body class=back>
+
+  <div class="header">
+    <a href="getinvolved.html"class="button">Get Involved</a>
+    <a href="ourpeople.html"class="button">Our People</a>
+    <a href="aboutus.html"class="button">About Us</a>
+    <a href="ourmission.html"class="button">Our Mission</a>
+    <a href="homepage.html"class="button">Home</a>
+    <div class="redemption">Team Redemption</div>
+    </div>
+    <div class="top"></div>
+
+<h1 class=heading>Administrative Page</h1>
 
 <div>
   <table class = "kids">
     <% for(var i=0; i<database.length; i++) {%>
     <tr class = "kid">
-      <td><%= database[i].name %>,  <%= database[i].age %></td>
-      <td rowspan="2"><%= database[i].quote %></td>
-    </tr>
-    <tr class = "kid">
-      <td><img src = <%= database[i].base64 %> width="50" height="50"/></td>
+      <td class=optionA><%= database[i].name %>,  <%= database[i].age %><br><img src = <%= database[i].base64 %> width="50" height="50"/></td>
+      <td class=optionB><%= database[i].quote %></td>
     </tr>
     <% } %>
   </table>
 </div>
 
+
 <div>
-  <h2>add a kid</h2>
+  <h2 class=subheading>Add Members</h2>
   <input type="file" id="fileLink" onchange="encodeImageFileAsURL(this)" name="fileLink">
 
   <form action="/kids" method="POST">
@@ -37,7 +46,7 @@
 
 
   <div>
-    <h2>update any element</h2>
+    <h2 class=subheading>Update Any Element</h2>
 
     <form onsubmit="return false;">
       <input type="text"  placeholder="Enter a name to update" id="nameToUpdate" name="name">
@@ -58,7 +67,7 @@
   </div>
 
   <div>
-    <h2>remove a kid</h2>
+    <h2 class=subheading>Remove Members</h2>
     <form onsubmit="return false;">
       <input type="text"  placeholder="Enter a name to delete" id="nameToDelete" name="name">
       <input type="submit" onclick="saveToDelete();" >
