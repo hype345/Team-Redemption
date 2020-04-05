@@ -21,7 +21,6 @@ td.optionA {
     color: rgb(85, 85, 88);
     font-family: "Palatino Linotype";
     text-align: left;
-
   }  
   table tr:nth-child(2n) {
     background-color: #eee;

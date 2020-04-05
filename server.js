@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({limit: '50mb' , parameterLimit:50000, extended: t
 
 app.set('view engine', 'ejs')
 
+//app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.static('public'))
 
 app.use(express.json({limit: '50mb'}));
