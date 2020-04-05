@@ -1,19 +1,17 @@
 const express = require('express')
 const bodyParser= require('body-parser')
+const path = require('path');
 const app = express()
 
-app.use(express.static(__dirname + '/public'));
-
-app.use(bodyParser.urlencoded({limit: '50mb' , parameterLimit:50000, extended: true}))
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-//app.set('views', path.join(__dirname, 'views'));
 
+app.use(bodyParser.urlencoded({limit: '50mb' , parameterLimit:50000, extended: true}))
 app.use(express.static('public'))
-
 app.use(express.json({limit: '50mb'}));
-
 app.use(bodyParser.json({limit: '50mb'}))
 
 const MongoClient = require('mongodb').MongoClient
