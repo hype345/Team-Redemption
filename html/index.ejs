@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./include/head') %>
+<body class=back>
+    <%- include ('./include/header') %>
+
+
+    <div>
+        <img class="mySlides" id="Slide1" src="workout.jpg" width="100%" height="10%">
+        <img class="mySlides" id="Slide2" src="boxing4.jpg" width="100%" height="10%">
+    </div>
+  
+    <script>
+        var myIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 5000);
+        }
+    </script>
+   
+
+    <h1 class=heading>Building Community through Boxing</h1>
+    <h2 class=subheading>Strengthening Body and Mind</h2>
+    <p class=text>The Team Redemption gym, located in east Baltimore, offers local elementary aged children an extracurricular activity through boxing.
+        It teaches the importance of community, strength of body, and strength of mind.</p style=>
+    <div class="firstcontainer">
+        <div class="first">
+            <h2 class=subheading>Meet the Kids</h2>
+            <p class=textother>At its core, our organization is made by the kids and for the kids. Click the image to meet them!</p>
+            <img src="IMG_9417.JPG" alt="Kid" style="width:35%">
+        </div>
+    </div>
+    <div class="firstcontainer">
+        <div class="second">
+            <h2 class=subheading>Donate Now</h2>
+            <p class=textother>Being a non-profit, donations are very important for the maintanence and projects of Team Redemption. Therefore, donations are encouraged if our program speaks to you. Thank you for your consideration!</p>
+            <button class ="oop" onclick="window.location.href = 'https://www.gofundme.com/f/ashley039s-garden-team-redemption/donate?utm_source=widget&utm_medium=referral&utm_campaign=p_cp+share-sheet';">Click Here to Donate</button>
+        </div>
+    </div>
+
+        <div class ="row">
+            <div class="column">
+                <img src="boxing1.jpg" alt="Boxing 1" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="boxing2.jpg" alt="Boxing 2" style="width:100%">
+            </div>
+            <div class="column">
+                <img src="boxing3.jpg" alt="Boxing 3" style="width:100%">
+            </div>
+        </div>
+    
+   <h2 class=subheading> Contact Us </h2>
+   <p class=text2>Email: </p>
+   <p class=text2>Phone Number: </p>
+   <p class=text2>   Location: 2312 East Monument Street Baltimore, MD 21205 </p>
+
+
+   <%- include ('./include/scripts') %>
+   <%- include ('./include/footer') %>
+</body>
+</html>
