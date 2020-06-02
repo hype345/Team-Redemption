@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./include/head') %>
+<body class=back>
+  <%- include ('./include/header') %>
+
+  <a href="admin"class="button">Admin</a>
+
+<h1 class=heading>List of Members</h1>
+
+<div>
+  <table class = "kids">
+    <% for(var i=0; i<database.length; i++) {%>
+    <tr class = "kid">
+      <td class=optionA><%= database[i].name %>,  <%= database[i].age %><br><img src = <%= database[i].base64 %> width="50" height="50"/></td>
+      <td class=optionB><%= database[i].quote %></td>
+    </tr>
+    <% } %>
+  </table>
+</div>
+
+
+  <%- include ('./include/scripts') %>
+  <%- include ('./include/footer') %>
+</body>
+</html>
