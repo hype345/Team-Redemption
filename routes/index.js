@@ -33,7 +33,7 @@ router.get('/ourmission', (req, res) => {
     })
   });
 
-  router.get('/admin', (req, res) => {
+  router.get('/15Cq8', (req, res) => {
     console.log('Request for admin page recieved');
     var mongoUtil = require( './mongoUtil' );
     var db = mongoUtil.getDb();
